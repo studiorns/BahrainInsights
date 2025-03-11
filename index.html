@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Metrics Guide for CMO - Bahrain</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* SONER Logo Animation */
+        @keyframes sonerScan { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes sonerBlip { 0%, 20%, 100% { opacity: 0; } 2%, 15% { opacity: 1; } 3% { transform: scale(1.2); } }
+        
+        /* SONER Logo styles */
+        .soner-logo { display: flex; align-items: center; color: white; font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 300; }
+        .soner-radar { width: 24px; height: 24px; border-radius: 50%; border: 1px solid white; margin: 0 3px; position: relative; background-color: rgba(255, 255, 255, 0.05); overflow: hidden; }
+        .soner-scanner { position: absolute; top: 0; left: 0; width: 100%; height: 100%; animation: sonerScan 4s linear infinite; transform-origin: center; }
+        .soner-scanner::before { content: ''; position: absolute; top: 0; left: 50%; width: 50%; height: 50%; background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4)); transform-origin: bottom left; clip-path: polygon(0 0, 100% 0, 0 100%); }
+        .soner-scanner::after { content: ''; position: absolute; top: 0; left: 50%; width: 50%; height: 1px; background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1)); transform-origin: left center; box-shadow: 0 0 4px rgba(255, 255, 255, 0.8); }
+        .soner-blip { position: absolute; width: 2px; height: 2px; background-color: white; border-radius: 50%; opacity: 0; box-shadow: 0 0 4px white; }
+        .soner-blip:nth-child(1) { top: 25%; left: 30%; animation: sonerBlip 4s 1s infinite; }
+        .soner-blip:nth-child(2) { top: 65%; left: 60%; animation: sonerBlip 4s 2.5s infinite; }
+        .soner-tagline { color: white; font-size: 8px; text-transform: uppercase; font-weight: 500; letter-spacing: 0.5em; margin-left: 10px; opacity: 0.8; }
+
+        :root {
+            --primary: #4285f4;
+            --primary-light: #1a2233;
+            --primary-dark: #8ab4f8;
+            --secondary: #34a853;
+            --secondary-light: #1a2a1e;
+            --warning: #fbbc04;
+            --warning-light: #332a1a;
+            --danger: #ea4335;
+            --danger-light: #331f1e;
+            --gray-100: #1e1e1e;
+            --gray-200: #2d2d2d;
+            --gray-300: #3d3d3d;
+            --gray-400: #4d4d4d;
+            --gray-500: #777777;
+            --gray-600: #a0a0a0;
+            --gray-700: #c0c0c0;
+            --gray-800: #e0e0e0;
+            --gray-900: #f0f0f0;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            --shadow-md: 0 6px 12px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 15px 25px rgba(0, 0, 0, 0.6);
+            --radius-sm: 4px;
+            --radius: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background-color: var(--gray-100);
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+        
+        header .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            color: var(--primary-dark);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+            color: var(--gray-800);
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.8rem;
+            color: var(--gray-800);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--gray-800);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+        }
+        
+        .card {
+            background-color: var(--gray-200);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+        }
+        
+        .metric-card {
+            background-color: var(--gray-200);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .metric-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .metric-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin: 0;
+        }
+        
+        .metric-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            background-color: var(--primary-light);
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+        
+        .metric-description {
+            margin-bottom: 15px;
+            color: var(--gray-700);
+        }
+        
+        .calculation {
+            background-color: var(--gray-100);
+            padding: 15px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 15px;
+            border-left: 3px solid var(--gray-400);
+        }
+        
+        .calculation h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--gray-800);
+        }
+        
+        .interpretation {
+            margin-bottom: 15px;
+        }
+        
+        .interpretation h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--gray-800);
+        }
+        
+        .interpretation ul {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .business-implications {
+            background-color: var(--secondary-light);
+            padding: 15px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 15px;
+            border-left: 3px solid var(--secondary);
+        }
+        
+        .business-implications h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .business-implications ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        
+        .business-implications li {
+            margin-bottom: 8px;
+        }
+        
+        .business-implications li:last-child {
+            margin-bottom: 0;
+        }
+        
+        .example {
+            background-color: var(--warning-light);
+            padding: 15px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 15px;
+            border-left: 3px solid var(--warning);
+        }
+        
+        .example h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #d68000;
+        }
+        
+        .section-intro {
+            background-color: var(--primary-light);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .section-intro p {
+            margin-bottom: 0;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 0;
+            border-top: 1px solid var(--gray-300);
+            color: var(--gray-600);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            .card, .metric-card {
+                padding: 20px;
+            }
+            
+            .metric-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .metric-value {
+                align-self: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
+                <div class="soner-logo">
+                    S<div class="soner-radar">
+                        <div class="soner-scanner"></div>
+                        <div class="soner-blip"></div>
+                        <div class="soner-blip"></div>
+                    </div>NER
+                    <span class="soner-tagline">Visual Intelligence</span>
+                </div>
+            </div>
+            <h1>Bahrain Market Metrics & Insights</h1>
+            <p class="subtitle">Market Analysis and Performance Indicators</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="card">
+            <h2>Introduction</h2>
+            <p>This guide provides detailed explanations of the key metrics and insights used in our market analysis dashboards for Bahrain. It is designed to help decision-makers understand the technical aspects of our market performance indicators and their business implications.</p>
+            <p>Each metric is explained in terms of:</p>
+            <ul>
+                <li>What it measures</li>
+                <li>How it's calculated</li>
+                <li>How to interpret different values</li>
+                <li>Business implications and actionable insights</li>
+                <li>Practical examples where applicable</li>
+            </ul>
+            <p>The metrics are organized into categories that align with our dashboard structure, making it easy to reference when reviewing market performance.</p>
+        </div>
+        
+        <h2>Brand Health Metrics</h2>
+        <div class="section-intro">
+            <p>Brand health metrics measure consumer perceptions and attitudes toward our destination. These metrics are leading indicators that typically precede changes in actual travel behavior. For Bahrain, these metrics show high awareness but challenges in conversion to consideration and intent.</p>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Awareness</h3>
+                <div class="metric-value">92.47% (+2.77pp)</div>
+            </div>
+            <p class="metric-description">Awareness measures the percentage of the target audience who are aware of Abu Dhabi as a Cultural and Sea & Sun travel destination.</p>
+            
+            <div class="calculation">
+                <h5>How It's Calculated:</h5>
+                <p>Based on survey responses to questions like "Which international holiday destinations offering a combination of both cultural and sun & beach activities are you aware of?" The percentage represents those who respond positively out of the total surveyed population.</p>
+            </div>
+            
+            <div class="interpretation">
+                <h5>Interpretation:</h5>
+                <ul>
+                    <li><strong>90%+</strong>: Excellent awareness, approaching market saturation</li>
+                    <li><strong>70-90%</strong>: Strong awareness, but room for improvement</li>
+                    <li><strong>50-70%</strong>: Moderate awareness, significant opportunity for growth</li>
+                    <li><strong>&lt;50%</strong>: Low awareness, major opportunity but requires substantial investment</li>
+                </ul>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li>At 92.47%, Bahrain has excellent awareness of Abu Dhabi, indicating market saturation in terms of basic destination knowledge.</li>
+                    <li>The +2.77pp year-over-year growth suggests continued improvement in awareness levels despite already being high.</li>
+                    <li>With awareness approaching saturation, marketing efforts should shift focus from awareness-building to conversion through the funnel.</li>
+                    <li>The high awareness level provides a solid foundation for more targeted marketing efforts aimed at improving consideration and intent metrics.</li>
+                    <li>Further investment in pure awareness campaigns would likely yield diminishing returns; resources should be redirected to addressing barriers to consideration.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Consideration</h3>
+                <div class="metric-value">48.84% (+3.84pp)</div>
+            </div>
+            <p class="metric-description">Consideration measures the percentage of aware consumers who would consider travelling to Abu Dhabi in the next 3 years.</p>
+            
+            <div class="calculation">
+                <h5>How It's Calculated:</h5>
+                <p>Based on survey responses to questions like "Which of the below holiday destinations would you like to visit in the next 3 years?" The percentage represents those who respond positively out of those who are aware of Abu Dhabi.</p>
+            </div>
+            
+            <div class="interpretation">
+                <h5>Interpretation:</h5>
+                <ul>
+                    <li><strong>70%+</strong>: Excellent consideration, strong position in consumer mindset</li>
+                    <li><strong>50-70%</strong>: Good consideration, competitive position</li>
+                    <li><strong>30-50%</strong>: Moderate consideration, significant barriers exist</li>
+                    <li><strong>&lt;30%</strong>: Low consideration, major perception issues to address</li>
+                </ul>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li>At 48.84%, consideration is in the moderate range, indicating significant barriers to conversion from awareness to consideration.</li>
+                    <li>The +3.84pp increase shows positive momentum in improving consideration.</li>
+                    <li>This suggests a significant gap between awareness (92.47%) and consideration (48.84%), indicating that while many Bahraini travelers know about Abu Dhabi, fewer are actively considering it as a destination.</li>
+                    <li>Marketing should focus on addressing the specific barriers that prevent aware consumers from considering Abu Dhabi, particularly the preference for other destinations (62%, +6pp).</li>
+                    <li>The moderate consideration rate with positive growth indicates that barrier-removal strategies are working but need continued focus.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Intent</h3>
+                <div class="metric-value">28.35% (+4.35pp)</div>
+            </div>
+            <p class="metric-description">Intent measures the percentage of considering consumers who intend to visit Abu Dhabi in the next 12 months.</p>
+            
+            <div class="calculation">
+                <h5>How It's Calculated:</h5>
+                <p>Based on survey responses to questions like "Which of the below holiday destinations are you likely to visit in the next 12 months?" The percentage represents those who respond positively out of those who are considering Abu Dhabi.</p>
+            </div>
+            
+            <div class="interpretation">
+                <h5>Interpretation:</h5>
+                <ul>
+                    <li><strong>50%+</strong>: Excellent intent, very strong conversion potential</li>
+                    <li><strong>30-50%</strong>: Good intent, healthy conversion potential</li>
+                    <li><strong>20-30%</strong>: Moderate intent, conversion challenges exist</li>
+                    <li><strong>&lt;20%</strong>: Low intent, significant conversion barriers</li>
+                </ul>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li>At 28.35%, intent is at the moderate range, indicating some barriers to conversion from consideration to intent.</li>
+                    <li>The +4.35pp increase shows positive momentum in improving intent, which is encouraging.</li>
+                    <li>This suggests that among those who consider Abu Dhabi, a moderate proportion have immediate plans to visit.</li>
+                    <li>The positive growth in intent (+4.35pp) indicates that tactical campaigns are effectively creating urgency and addressing practical barriers to booking.</li>
+                    <li>Marketing should continue to focus on creating urgency and addressing practical barriers to booking (perceptions about cost, activities, etc.).</li>
+                    <li>The moderate intent level with positive growth suggests that tactical, conversion-focused campaigns are working and should be continued.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Intent/Consideration Ratio</h3>
+                <div class="metric-value">0.58 (+0.05)</div>
+            </div>
+            <p class="metric-description">This ratio measures the efficiency of converting consideration to intent, indicating how effectively we move consumers down the funnel.</p>
+            
+            <div class="calculation">
+                <h5>How It's Calculated:</h5>
+                <p>Intent percentage divided by Consideration percentage. For example: 28.35% ÷ 48.84% = 0.58</p>
+            </div>
+            
+            <div class="interpretation">
+                <h5>Interpretation:</h5>
+                <ul>
+                    <li><strong>0.8+</strong>: Excellent conversion efficiency, minimal drop-off</li>
+                    <li><strong>0.6-0.8</strong>: Good conversion efficiency</li>
+                    <li><strong>0.4-0.6</strong>: Moderate conversion efficiency, significant drop-off</li>
+                    <li><strong>&lt;0.4</strong>: Poor conversion efficiency, major funnel leakage</li>
+                </ul>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li>At 0.58, the conversion from consideration to intent is moderate, indicating that 58% of those who consider Abu Dhabi intend to visit in the next 12 months.</li>
+                    <li>The increase of +0.05 suggests an improvement in conversion efficiency.</li>
+                    <li>This indicates that intent is growing faster than consideration, suggesting decreasing barriers at the lower funnel.</li>
+                    <li>The improving ratio suggests that once Bahraini travelers consider Abu Dhabi, they are increasingly likely to convert to actual intent to visit.</li>
+                    <li>Marketing should continue to focus on understanding and addressing the specific barriers that are preventing consideration from converting to intent.</li>
+                    <li>The improvement in this ratio (+0.05) is a positive sign that lower-funnel marketing activities are working effectively.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>Market Characteristics</h2>
+        <div class="section-intro">
+            <p>Market characteristics describe fundamental travel behaviors and patterns specific to the Bahrain market. These metrics help inform tactical marketing decisions and campaign timing.</p>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Average Length of Stay</h3>
+                <div class="metric-value">2.7 days</div>
+            </div>
+            <p class="metric-description">The average number of nights Bahraini travelers spend in Abu Dhabi per visit.</p>
+            
+            <div class="calculation">
+                <h5>How It's Calculated:</h5>
+                <p>Based on hotel guest data and visitor surveys (DVS), calculated as the sum of all nights stayed divided by the number of visitors.</p>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li>The 2.7-day average stay indicates a very short vacation timeframe, typical of regional markets with proximity to Abu Dhabi.</li>
+                    <li>This suggests marketing should focus on compact but comprehensive itineraries and experiences that can be enjoyed within a 3-4 day timeframe.</li>
+                    <li>Package offerings should be designed around this timeframe to maximize appeal.</li>
+                    <li>There's an opportunity to develop 3-4 day itineraries that showcase a variety of experiences across Abu Dhabi.</li>
+                    <li>Hotel partners should be encouraged to develop packages with value-added benefits for stays of 3-4 days.</li>
+                    <li>The relatively short stay suggests a need for high-impact experiences that deliver maximum value in a limited time.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Booking Window</h3>
+                <div class="metric-value">25 days</div>
+            </div>
+            <p class="metric-description">The average time between booking and arrival for Bahraini travelers visiting Abu Dhabi.</p>
+            
+            <div class="calculation">
+                <h5>How It's Calculated:</h5>
+                <p>Based on booking data from hotels, flight booking engines and OTAs, calculated as the average number of days between booking confirmation and arrival date.</p>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li>The 25-day booking window is relatively short, indicating a market that makes travel decisions quickly.</li>
+                    <li>Marketing campaigns should be timed to run approximately 1 month before target travel periods.</li>
+                    <li>This short window indicates spontaneous decision-making, requiring quick and responsive marketing tactics.</li>
+                    <li>Last-minute deals and promotions are likely to be effective for this market.</li>
+                    <li>The short booking window suggests that digital media with immediate call-to-actions would be most effective.</li>
+                    <li>This compressed planning period requires streamlined booking processes and immediate confirmation systems.</li>
+                </ul>
+            </div>
+            
+            <div class="example">
+                <h5>Strategic Example:</h5>
+                <p>For the July-August peak season, major campaign pushes should begin in June to align with the 25-day booking window. Last-minute deals and flash promotions offered 15-30 days in advance could be particularly effective for this market, capitalizing on their quick decision-making process.</p>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Peak Months (Hotel Guests)</h3>
+                <div class="metric-value">Jul & Aug</div>
+            </div>
+            <p class="metric-description">The months with the highest volume of Bahraini hotel guests in Abu Dhabi.</p>
+            
+            <div class="calculation">
+                <h5>How It's Calculated:</h5>
+                <p>Based on hotel occupancy data, identifying the months with the highest number of Bahraini guests.</p>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li>July (4,599 guests) and August (5,400 guests) represent the clear peak season for Bahraini travelers.</li>
+                    <li>This summer peak aligns with school holiday periods and regional travel patterns.</li>
+                    <li>Marketing should ensure sufficient inventory and capacity during these months.</li>
+                    <li>Pricing strategies can be optimized for these high-demand periods.</li>
+                    <li>There's an opportunity to develop shoulder season campaigns (June and September) to extend the peak period.</li>
+                    <li>The significant drop in hotel guests during other months represents a growth opportunity through targeted campaigns highlighting seasonal activities and special offers.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>Advanced Statistical Metrics</h2>
+        <div class="section-intro">
+            <p>These advanced metrics provide deeper insights into market dynamics, helping to quantify relationships between marketing activities and outcomes, forecast accuracy, and market behavior patterns.</p>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Seasonality Index</h3>
+                <div class="metric-value">1.4 (moderate seasonal variation)</div>
+            </div>
+            <p class="metric-description">A statistical measure that quantifies the degree of seasonal variation in the Bahrain travel market data.</p>
+            
+            <div class="calculation">
+                <h5>How It's Calculated:</h5>
+                <p>Typically calculated by dividing the highest monthly value by the average monthly value in a year. For example, if August has a hotel guest count of 5,400 (the highest month) and the average monthly count is around 3,857, the seasonality index would be approximately 1.4 (5,400 ÷ 3,857).</p>
+            </div>
+            
+            <div class="interpretation">
+                <h5>Interpretation:</h5>
+                <ul>
+                    <li><strong>1.0-1.3</strong>: Low seasonal variation (relatively flat demand throughout the year)</li>
+                    <li><strong>1.3-1.6</strong>: Moderate seasonal variation (noticeable peaks and troughs)</li>
+                    <li><strong>1.6-2.0</strong>: High seasonal variation (significant peaks and troughs)</li>
+                    <li><strong>2.0+</strong>: Extreme seasonal variation (very pronounced peaks and low seasons)</li>
+                </ul>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li>The 1.4 value indicates that the market has moderate seasonal fluctuations, with peak months having about 40% higher travel activity than the average month.</li>
+                    <li>This is significant enough to warrant seasonal marketing strategies but doesn't indicate extreme seasonality.</li>
+                    <li>Marketing efforts should be concentrated before peak periods (considering the 25-day booking window).</li>
+                    <li>There's also opportunity to grow travel interest during off-peak months through targeted campaigns.</li>
+                    <li>Resource allocation should follow this seasonal pattern, with increased investment before peak periods.</li>
+                    <li>The moderate seasonality suggests a need for differential pricing and promotion strategies across the year, but extreme discounting in off-peak periods may not be necessary.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Media Elasticity</h3>
+                <div class="metric-value">0.18 (low impact)</div>
+            </div>
+            <p class="metric-description">A marketing metric that measures how responsive travel queries are to changes in media impressions for the Bahrain market.</p>
+            
+            <div class="calculation">
+                <h5>How It's Calculated:</h5>
+                <p>Calculated using regression analysis on historical data, comparing the percentage change in travel queries to the percentage change in media impressions over time.</p>
+                <p><strong>Formula:</strong> Media Elasticity = % Change in Travel Queries ÷ % Change in Media Impressions</p>
+            </div>
+            
+            <div class="interpretation">
+                <h5>Interpretation:</h5>
+                <ul>
