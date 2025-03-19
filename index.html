@@ -75,16 +75,32 @@
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            background: linear-gradient(135deg, #1a73e8 0%, #174ea6 100%);
             color: white;
-            padding: 40px 0;
+            padding: 32px 0;
+            text-align: center;
             margin-bottom: 40px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSI0MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IHgxPSIxMDAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiIGlkPSJhIj48c3RvcCBzdG9wLWNvbG9yPSIjRkZGIiBzdG9wLW9wYWNpdHk9Ii4wNSIgb2Zmc2V0PSIwJSIvPjxzdG9wIHN0b3AtY29sb3I9IiNGRkYiIHN0b3Atb3BhY2l0eT0iLjAyIiBvZmZzZXQ9IjEwMCUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBkPSJNMTQ0MCAyMDBjLTEzMS44LTEyLjktMjY3LjgtMTkuNC00MDgtMTkuNC0xNDAuMiAwLTI3Ni4yIDYuNS00MDggMTkuNFYwaDgxNnYyMDB6IiBmaWxsPSJ1cmwoI2EpIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
         }
         
         header .container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+            position: relative;
+            z-index: 1;
         }
         
         h1 {
@@ -126,6 +142,8 @@
             font-size: 1.2rem;
             color: rgba(255, 255, 255, 0.9);
             max-width: 800px;
+            text-align: center;
+            margin: 0 auto;
         }
         
         .card {
@@ -270,11 +288,15 @@
         }
         
         .footer {
-            text-align: center;
-            margin-top: 50px;
             padding: 20px 0;
-            border-top: 1px solid var(--gray-300);
+            background-color: var(--gray-200);
+            margin-top: 40px;
+        }
+        
+        .footer p {
+            text-align: center;
             color: var(--gray-600);
+            margin-bottom: 0;
         }
         
         @media (max-width: 768px) {
@@ -324,6 +346,7 @@
                 </div>
             </div>
             <h1>Bahrain Market Metrics & Insights</h1>
+            <h2 style="font-size: 1.3rem; margin-top: 5px; font-weight: 500; border-bottom: none; padding-bottom: 0; color: white;">Department of Culture and Tourism - Abu Dhabi</h2>
             <p class="subtitle">Market Analysis and Performance Indicators</p>
         </div>
     </header>
@@ -507,10 +530,10 @@
                 <h5>Business Implications:</h5>
                 <ul>
                     <li>The 2.7-day average stay indicates a very short vacation timeframe, typical of regional markets with proximity to Abu Dhabi.</li>
-                    <li>This suggests marketing should focus on compact but comprehensive itineraries and experiences that can be enjoyed within a 3-4 day timeframe.</li>
+                    <li>This suggests marketing should focus on compact but comprehensive itineraries and experiences that can be enjoyed within a 3-day timeframe.</li>
                     <li>Package offerings should be designed around this timeframe to maximize appeal.</li>
-                    <li>There's an opportunity to develop 3-4 day itineraries that showcase a variety of experiences across Abu Dhabi.</li>
-                    <li>Hotel partners should be encouraged to develop packages with value-added benefits for stays of 3-4 days.</li>
+                    <li>There's an opportunity to develop 2-3 day itineraries that showcase a variety of experiences across Abu Dhabi.</li>
+                    <li>Hotel partners should be encouraged to develop packages with value-added benefits for stays of 2-3 days.</li>
                     <li>The relatively short stay suggests a need for high-impact experiences that deliver maximum value in a limited time.</li>
                 </ul>
             </div>
@@ -627,3 +650,385 @@
             <div class="interpretation">
                 <h5>Interpretation:</h5>
                 <ul>
+                    <li><strong>&lt;0.3</strong>: Low impact (minimal response to media investment)</li>
+                    <li><strong>0.3-0.6</strong>: Moderate impact (reasonable response to media investment)</li>
+                    <li><strong>0.6-1.0</strong>: High impact (strong response to media investment)</li>
+                    <li><strong>&gt;1.0</strong>: Very high impact (exceptional response to media investment)</li>
+                </ul>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li>The 0.18 elasticity means that for every 10% increase in media impressions, travel queries increase by approximately 1.8%.</li>
+                    <li>This indicates that media investments drive travel queries with relatively low efficiency in the Bahrain market.</li>
+                    <li>The relationship is positive but weak (less than 0.3).</li>
+                    <li>Media campaigns will generate positive ROI but with lower efficiency compared to other markets.</li>
+                    <li>Doubling media spend will not double travel queries, but will produce modest growth.</li>
+                    <li>The low elasticity suggests that the Bahrain market is less responsive to media campaigns, and other factors significantly influence travel decisions.</li>
+                    <li>This low responsiveness suggests that media investments should be complemented by other marketing approaches, such as addressing specific barriers to visitation and leveraging the high awareness levels.</li>
+                </ul>
+            </div>
+            
+            <div class="example">
+                <h5>Strategic Example:</h5>
+                <p>If you're planning to increase media impressions by 180% for 2025 (as indicated in the market plan), you can expect approximately a 32.4% increase in travel queries (180% × 0.18 = 32.4%). This helps set realistic expectations for campaign performance and ROI calculations, and suggests that additional tactics beyond media impressions will be needed to achieve more substantial growth.</p>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">YoY Growth Consistency</h3>
+                <div class="metric-value">0.92 (high consistency)</div>
+            </div>
+            <p class="metric-description">A statistical measure that evaluates how uniform or predictable the year-over-year growth patterns are for the Bahrain travel market.</p>
+            
+            <div class="calculation">
+                <h5>How It's Calculated:</h5>
+                <p>Typically calculated using a statistical measure like the coefficient of variation (inverse) or correlation coefficient of YoY growth rates across different time periods. The scale ranges from 0 to 1, where 0 represents completely inconsistent growth (highly volatile) and 1 represents perfectly consistent growth (same growth rate across all periods).</p>
+            </div>
+            
+            <div class="interpretation">
+                <h5>Interpretation:</h5>
+                <ul>
+                    <li><strong>&lt;0.5</strong>: Low consistency (high volatility, unpredictable patterns)</li>
+                    <li><strong>0.5-0.7</strong>: Moderate consistency (some predictability with variations)</li>
+                    <li><strong>0.7-0.9</strong>: High consistency (reliable patterns with minor variations)</li>
+                    <li><strong>&gt;0.9</strong>: Very high consistency (highly predictable patterns)</li>
+                </ul>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li>The 0.92 consistency indicates that there is very high predictability in how the Bahrain market behaves year-over-year.</li>
+                    <li>Forecasting can be done with high confidence.</li>
+                    <li>Most months will show similar growth patterns to previous years.</li>
+                    <li>Very few months may show unexpected variations requiring adaptive strategies.</li>
+                    <li>Marketing teams can plan with high certainty about expected outcomes.</li>
+                    <li>Historical patterns provide very reliable guidance for future planning.</li>
+                    <li>This high consistency (0.92) contributes to the relatively narrow forecast confidence interval of ±3.2%.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Forecast Confidence Interval</h3>
+                <div class="metric-value">±3.2%</div>
+            </div>
+            <p class="metric-description">A statistical measure indicating the range within which we expect the actual 2025 travel query values to fall with a certain level of confidence (typically 95%).</p>
+            
+            <div class="calculation">
+                <h5>How It's Calculated:</h5>
+                <p>Derived from statistical analysis of historical forecast accuracy, market volatility, and model parameters. It represents the standard error of the forecast multiplied by a factor corresponding to the desired confidence level (typically 1.96 for 95% confidence).</p>
+            </div>
+            
+            <div class="interpretation">
+                <h5>Interpretation:</h5>
+                <ul>
+                    <li><strong>&lt;5%</strong>: Very high forecast precision, highly reliable predictions</li>
+                    <li><strong>5-10%</strong>: Good forecast precision, reliable predictions with moderate variance</li>
+                    <li><strong>10-15%</strong>: Moderate forecast precision, usable predictions with significant variance</li>
+                    <li><strong>&gt;15%</strong>: Low forecast precision, high uncertainty in predictions</li>
+                </ul>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li>The ±3.2% confidence interval means that if we forecast a travel query index of 5.0 for a particular month, the actual value is expected to fall between 4.84 and 5.16 with 95% confidence.</li>
+                    <li>This very narrow interval indicates a highly reliable forecast for the Bahrain market.</li>
+                    <li>Marketing teams should plan with minimal contingencies, knowing the potential range of outcomes is quite narrow.</li>
+                    <li>Budget allocations can be made with high confidence, with limited need for flexibility to adjust based on actual performance.</li>
+                    <li>The excellent confidence interval suggests that forecasts can be used with high confidence for planning purposes.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Impression Efficiency</h3>
+                <div class="metric-value">0.48 queries per 1000 impressions</div>
+            </div>
+            <p class="metric-description">Measures how efficiently media impressions generate travel queries, indicating the effectiveness of our creative content and targeting.</p>
+            
+            <div class="calculation">
+                <h5>How It's Calculated:</h5>
+                <p>Total travel queries divided by total impressions (in thousands) over a specific time period.</p>
+                <p><strong>Formula:</strong> Impression Efficiency = Travel Queries ÷ (Impressions ÷ 1000)</p>
+            </div>
+            
+            <div class="interpretation">
+                <h5>Interpretation:</h5>
+                <ul>
+                    <li><strong>&lt;0.5</strong>: Low efficiency, poor conversion of impressions to queries</li>
+                    <li><strong>0.5-0.8</strong>: Moderate efficiency, reasonable conversion of impressions</li>
+                    <li><strong>0.8-1.2</strong>: Good efficiency, strong conversion of impressions</li>
+                    <li><strong>&gt;1.2</strong>: Excellent efficiency, very strong conversion of impressions</li>
+                </ul>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li>At 0.48 queries per 1000 impressions, the Bahrain market shows low efficiency in converting media exposure to actual travel interest.</li>
+                    <li>This suggests that our creative content and targeting could be improved for this market.</li>
+                    <li>Marketing should refine creative content and targeting to improve this efficiency.</li>
+                    <li>A/B testing different creative approaches could help identify more effective messaging.</li>
+                    <li>Audience segmentation and precise targeting need optimization.</li>
+                    <li>Monitoring this metric over time can help identify trends in creative effectiveness and audience responsiveness.</li>
+                    <li>The low efficiency (just below the 0.5 threshold) suggests that creative content should be specifically tailored to address the unique barriers and motivations of the Bahrain market.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>Barriers to Visitation</h2>
+        <div class="section-intro">
+            <p>Understanding why potential visitors choose not to travel to Abu Dhabi is crucial for developing targeted marketing strategies that address specific concerns and misconceptions.</p>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Top Barriers to Visit</h3>
+                <div class="metric-value">5 key factors</div>
+            </div>
+            <p class="metric-description">The primary reasons Bahraini travelers give for not considering Abu Dhabi as a travel destination, based on survey research.</p>
+            
+            <div class="calculation">
+                <h5>How It's Calculated:</h5>
+                <p>Based on survey responses to questions like "What are the main reasons you would not consider traveling to Abu Dhabi?" The percentages represent the proportion of respondents who selected each reason.</p>
+            </div>
+            
+            <div class="interpretation">
+                <h5>Current Barriers (Q4 2024 vs Q1 2021):</h5>
+                <ul>
+                    <li><strong>Preference for Other Destinations</strong>: 62% (+6pp) would rather visit other places</li>
+                    <li><strong>Already Visited Before</strong>: 41% (+5pp) have already visited Abu Dhabi</li>
+                    <li><strong>Too Expensive</strong>: 36% (-4pp) believe it's too expensive</li>
+                    <li><strong>Weather Concerns</strong>: 27% (+7pp) believe the weather is not good</li>
+                    <li><strong>Age Perception</strong>: 23% (+2pp) believe it's only for younger people</li>
+                </ul>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li><strong>Preference for Other Destinations (62%, +6pp)</strong>: The significant increase is concerning and suggests Abu Dhabi is losing competitive positioning in the Bahrain market. Marketing should focus on unique differentiators and experiences that can't be found elsewhere.</li>
+                    <li><strong>Already Visited Before (41%, +5pp)</strong>: This high percentage indicates a need for "new reasons to visit" messaging, highlighting new attractions, experiences, and developments that previous visitors haven't seen.</li>
+                    <li><strong>Too Expensive (36%, -4pp)</strong>: The slight decrease suggests improving perceptions about value. Marketing should continue to highlight value propositions and competitive pricing compared to other luxury destinations.</li>
+                    <li><strong>Weather Concerns (27%, +7pp)</strong>: The increase suggests growing concerns about climate. Marketing should address this by highlighting indoor activities, seasonal events, and optimal times to visit.</li>
+                    <li><strong>Age Perception (23%, +2pp)</strong>: The increase suggests a perception that Abu Dhabi caters primarily to younger travelers. Marketing should showcase experiences that appeal to all age groups.</li>
+                </ul>
+            </div>
+            
+            <div class="example">
+                <h5>Strategic Recommendation:</h5>
+                <p>Based on these barriers, a "What's New in Abu Dhabi" campaign addressing the "already visited" barrier (41%, +5pp) combined with a "Unique Abu Dhabi" campaign targeting the preference for other destinations (62%, +6pp) would address the two most significant barriers to visitation from the Bahrain market. These should be complemented by value messaging to reinforce the improving "too expensive" perception (36%, -4pp).</p>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Decreasing Barriers</h3>
+                <div class="metric-value">2 improving factors</div>
+            </div>
+            <p class="metric-description">Barriers to visitation that have shown significant improvement over time, representing successful perception changes.</p>
+            
+            <div class="interpretation">
+                <h5>Improving Barriers (Q4 2024 vs Q1 2021):</h5>
+                <ul>
+                    <li><strong>Too Expensive</strong>: 36% (-4pp) believe it's too expensive</li>
+                    <li><strong>Not Value for Money</strong>: 7% (-3pp) believe it's not worth the cost</li>
+                </ul>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li>The decrease in "Too Expensive" perception (-4pp) indicates successful communication about the value proposition and competitive pricing of Abu Dhabi.</li>
+                    <li>The decrease in "Not Value for Money" perception (-3pp) reinforces the improving value perception.</li>
+                    <li>These positive changes should be maintained and leveraged in marketing communications.</li>
+                    <li>The fact that only two barriers are showing improvement while several are increasing is concerning and suggests a need for a comprehensive strategy to address negative perceptions.</li>
+                    <li>The improving value perception provides a foundation to build upon in addressing other barriers, particularly by emphasizing the unique experiences and value that visitors receive for their investment.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>Top Attractions for Bahraini Travelers</h2>
+        <div class="section-intro">
+            <p>Understanding the most popular attractions among Bahraini travelers provides valuable insights into their preferences and interests, helping to shape targeted marketing strategies and product development.</p>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Top 10 Attractions</h3>
+                <div class="metric-value">Last 90 Days</div>
+            </div>
+            <p class="metric-description">The most searched attractions in Abu Dhabi by Bahraini travelers based on TripAdvisor data from the past 90 days.</p>
+            
+            <div class="calculation">
+                <h5>How It's Calculated:</h5>
+                <p>Based on TripAdvisor search data, showing the number of times Bahraini users searched for information about specific attractions in Abu Dhabi. These numbers represent interest and research activity, not actual visitation numbers.</p>
+            </div>
+            
+            <div class="interpretation">
+                <h5>Search Volume:</h5>
+                <ul>
+                    <li><strong>Warner Bros. World</strong>: 174 searches</li>
+                    <li><strong>SeaWorld Yas Island Abu Dhabi</strong>: 160 searches</li>
+                    <li><strong>Yas Waterworld</strong>: 140 searches</li>
+                    <li><strong>Sheikh Zayed Grand Mosque Center</strong>: 120 searches</li>
+                    <li><strong>Ferrari World Abu Dhabi</strong>: 120 searches</li>
+                    <li><strong>Yas Mall</strong>: 110 searches</li>
+                    <li><strong>Baps Hindu Mandir</strong>: 92 searches</li>
+                    <li><strong>Louvre Abu Dhabi</strong>: 84 searches</li>
+                    <li><strong>Emirates Palace Mandarin Oriental</strong>: 82 searches</li>
+                    <li><strong>The Galleria Al Maryah Island</strong>: 80 searches</li>
+                </ul>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li>Theme parks and entertainment attractions dominate the top searched destinations, with Warner Bros. World (174 searches), SeaWorld (160 searches), and Yas Waterworld (140 searches) being the most searched attractions.</li>
+                    <li>This indicates a strong interest in family-friendly entertainment experiences among Bahraini travelers during their research phase.</li>
+                    <li>Cultural attractions like Sheikh Zayed Grand Mosque (120 searches) and Louvre Abu Dhabi (84 searches) also show significant search interest, suggesting interest in cultural experiences as well.</li>
+                    <li>Shopping destinations like Yas Mall (110 searches) and The Galleria (80 searches) show strong interest, reflecting the shopping preferences of Bahraini travelers.</li>
+                    <li>The high ranking of theme parks suggests that marketing to the Bahrain market should prominently feature family entertainment offerings.</li>
+                    <li>These search patterns provide valuable insight into the attractions that generate the most interest during the trip planning phase.</li>
+                </ul>
+            </div>
+            
+            <div class="example">
+                <h5>Strategic Recommendation:</h5>
+                <p>Develop marketing campaigns that highlight Abu Dhabi's entertainment district on Yas Island, particularly focusing on the theme parks that dominate Bahraini travelers' searches. Create bundled packages that combine theme park experiences with shopping opportunities at Yas Mall and The Galleria. Consider developing special family packages specifically for the Bahrain market, leveraging their strong interest in entertainment attractions while also introducing cultural experiences like Sheikh Zayed Grand Mosque and Louvre Abu Dhabi.</p>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Attraction Categories</h3>
+                <div class="metric-value">Interest Analysis</div>
+            </div>
+            <p class="metric-description">Analysis of the types of attractions that generate the most interest among Bahraini travelers based on TripAdvisor search patterns.</p>
+            
+            <div class="interpretation">
+                <h5>Category Breakdown:</h5>
+                <ul>
+                    <li><strong>Theme Parks & Entertainment</strong>: 48% of top 20 attraction searches</li>
+                    <li><strong>Shopping & Retail</strong>: 22% of top 20 attraction searches</li>
+                    <li><strong>Cultural & Heritage Sites</strong>: 18% of top 20 attraction searches</li>
+                    <li><strong>Beaches & Waterfront</strong>: 8% of top 20 attraction searches</li>
+                    <li><strong>Luxury Experiences</strong>: 4% of top 20 attraction searches</li>
+                </ul>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li>The strong interest in theme parks and entertainment (48%) suggests that Bahraini travelers are researching family-friendly experiences during their trip planning.</li>
+                    <li>The significant interest in shopping destinations (22%) indicates that retail therapy is an important driver for Bahraini travelers.</li>
+                    <li>The moderate interest in cultural and heritage sites (18%) suggests an opportunity to increase awareness and interest in Abu Dhabi's cultural offerings.</li>
+                    <li>The relatively lower interest in beaches (8%) suggests that beach experiences are not a primary driver for Bahraini travelers.</li>
+                    <li>These search patterns can inform content marketing strategies, highlighting the types of attractions that generate the most interest during the research phase.</li>
+                    <li>The distribution of interest differs significantly from other markets, with a much stronger emphasis on theme parks and shopping compared to cultural attractions.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>Top Accommodations for Bahraini Travelers</h2>
+        <div class="section-intro">
+            <p>Analyzing the most viewed accommodations by Bahraini travelers provides critical insights into their preferences for location, brand, and property type, helping to inform targeted marketing strategies and partnership opportunities.</p>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-header">
+                <h3 class="metric-title">Top Accommodations</h3>
+                <div class="metric-value">Last 90 Days</div>
+            </div>
+            <p class="metric-description">The most viewed accommodations in Abu Dhabi by Bahraini travelers based on TripAdvisor page view data from the past 90 days.</p>
+            
+            <div class="calculation">
+                <h5>How It's Calculated:</h5>
+                <p>Based on TripAdvisor page view data, showing the number of times Bahraini users viewed specific accommodation pages for Abu Dhabi properties. These numbers represent research activity during the trip planning phase, not actual bookings.</p>
+            </div>
+            
+            <div class="interpretation">
+                <h5>Page View Volume:</h5>
+                <ul>
+                    <li><strong>W Abu Dhabi Yas Island</strong>: 184 page views</li>
+                    <li><strong>Al Raha Beach Resort & Spa</strong>: 120 page views</li>
+                    <li><strong>Crowne Plaza Abu Dhabi - Yas Island</strong>: 118 page views</li>
+                    <li><strong>Radisson Blu Hotel, Abu Dhabi Yas Island</strong>: 94 page views</li>
+                    <li><strong>Yas Island Rotana</strong>: 92 page views</li>
+                    <li><strong>The Ritz-Carlton, Abu Dhabi</strong>: 90 page views</li>
+                    <li><strong>Beach Rotana</strong>: 84 page views</li>
+                    <li><strong>Hilton Abu Dhabi Yas Island</strong>: 78 page views</li>
+                    <li><strong>The St. Regis Abu Dhabi</strong>: 68 page views</li>
+                    <li><strong>Dusit Thani Abu Dhabi</strong>: 64 page views</li>
+                </ul>
+            </div>
+            
+            <div class="business-implications">
+                <h5>Business Implications:</h5>
+                <ul>
+                    <li>Yas Island properties dominate the top viewed accommodations, with 5 of the top 10 properties located on this island, indicating a strong preference for staying near entertainment attractions.</li>
+                    <li>The W Abu Dhabi Yas Island (184 views) receives significantly more views than the second-ranked property, suggesting strong brand recognition and appeal.</li>
+                    <li>International chain hotels dominate the list, suggesting brand recognition and chain loyalty are important to Bahraini travelers.</li>
+                    <li>The high page view numbers for Yas Island properties align with the strong interest in Yas Island attractions seen in the attractions data.</li>
+                    <li>The strong preference for Yas Island accommodations suggests an opportunity for co-marketing initiatives with these properties specifically for the Bahrain market.</li>
+                    <li>The presence of both luxury (W, Ritz-Carlton) and mid-range (Crowne Plaza, Radisson) properties in the top 10 indicates diverse price point interests among Bahraini travelers.</li>
+                </ul>
+            </div>
+            
+            <div class="example">
+                <h5>Strategic Recommendation:</h5>
+                <p>Develop co-marketing campaigns with Yas Island hotels, particularly the W Abu Dhabi and other top-viewed properties, that include packages bundling accommodation with theme park access. Create special family packages that highlight the proximity of these hotels to the top attractions of interest to Bahraini travelers. Consider developing dedicated marketing materials for the Bahrain market that showcase the convenience of staying on Yas Island with easy access to Warner Bros. World, SeaWorld, and Yas Waterworld.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Conclusion</h2>
+            <p>This guide provides a comprehensive explanation of the key metrics used in our market analysis for Bahrain. By understanding these metrics and their business implications, DCT - Abu Dhabi can make more informed strategic marketing decisions.</p>
+            <p>The Bahrain market shows several distinctive characteristics:</p>
+            <ul>
+                <li>Excellent awareness (92.47%) but moderate consideration (48.84%) and intent (28.35%)</li>
+                <li>Positive growth in all brand health metrics, with intent (+4.35pp) showing the strongest improvement</li>
+                <li>A very short average stay (2.7 days) typical of regional markets with proximity to Abu Dhabi</li>
+                <li>A short booking window (25 days) indicating spontaneous decision-making</li>
+                <li>Moderate forecast for 2025 (+0.5% YoY) with mixed signals from H1 and H2 2024 performance</li>
+                <li>Low media elasticity (0.18) suggesting limited response to media investments</li>
+                <li>Significant barriers around preference for other destinations (62%, +6pp) and already having visited before (41%, +5pp)</li>
+                <li>Strong interest in theme parks and entertainment attractions, with Warner Bros. World and SeaWorld being the most searched attractions</li>
+                <li>Strong preference for Yas Island accommodations, with the W Abu Dhabi Yas Island being the most viewed property</li>
+            </ul>
+            
+            <hr style="border: 1px solid var(--primary-light); margin: 20px 0;">
+            
+            <p>These insights suggest a strategic focus on:</p>
+            <ul>
+                <li>Addressing the significant gap between awareness and consideration/intent through targeted barrier removal</li>
+                <li>Highlighting unique differentiators to counter the strong preference for other destinations</li>
+                <li>Developing "What's New" messaging to address the high percentage of travelers who have already visited</li>
+                <li>Showcasing the variety of family-friendly entertainment experiences to align with demonstrated interest</li>
+                <li>Developing comprehensive 2-3 day itineraries that span the typical stay duration</li>
+                <li>Timing campaigns to align with the 25-day booking window</li>
+                <li>Optimizing creative content and targeting to improve the low media elasticity</li>
+                <li>Developing campaigns focused on the July-August peak season</li>
+                <li>Featuring theme parks and entertainment attractions prominently in marketing materials to align with demonstrated interest</li>
+                <li>Creating bundled packages that combine entertainment experiences with shopping opportunities</li>
+                <li>Developing co-marketing initiatives with Yas Island hotels, particularly those near entertainment attractions</li>
+            </ul>
+            
+            <hr style="border: 1px solid var(--primary-light); margin: 20px 0;">
+            
+            <p>With these insights and ongoing monitoring of these metrics, DCT - Abu Dhabi can formulate more effective marketing strategies and increase our return on marketing investment in the Bahrain market. The significant increase in planned media impressions for 2025 (180.2% YoY) combined with the media elasticity (0.18) should drive growth in travel queries, particularly for the July-August peak period, though additional tactics beyond media impressions will be needed to achieve more substantial growth.</p>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="container">
+            <p>© 2025 Research & Insights Unit | Strategic Marketing & Communications | Department of Culture and Tourism – Abu Dhabi</p>
+        </div>
+    </div>
